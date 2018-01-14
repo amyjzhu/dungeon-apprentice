@@ -2,6 +2,8 @@ package main
 
 var numChars int
 var numEnemies int
+var difficulty Difficulty
+var party []Character
 
 // TODO: move environment enum to better location
 
@@ -55,6 +57,10 @@ type Character struct {
 
 func createEncounter(numEnemiesDesired int, env Environment) {
 	numEnemies = numEnemiesDesired
+
+	challengeRating := getChallengeRating(difficulty, party)
+	getMonsters(env, challengeRating)
+	// create a number of monsters...
 
 }
 
