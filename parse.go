@@ -57,6 +57,17 @@ func loadAllMonstersFromFile() []Monster {
 	return loadStringFromFile(absPath)
 }
 
+
+func getInt(s string) int {
+	integer, err := strconv.Atoi(s)
+	if err == nil {
+		fmt.Println("Talk to Amy... %s", err)
+	}
+
+	return integer
+}
+
+
 func loadStringFromFile(pathToFile string) []Monster {
 	b, err := ioutil.ReadFile(pathToFile) // just pass the file name
 	if err != nil {

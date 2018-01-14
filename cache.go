@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 // want to be able to cache enemy information relating to the environment
 // cache things in CR order?
@@ -19,6 +22,18 @@ func loadCache() {
 
 	fmt.Printf("%v\n", monsterCache)
 
+}
+
+// TODO: refactor to imporve extensibility
+func getMonsters(env Environment, cr int) {
+	candidates := make([]Monster,10)
+	for name, mon := range monsterCache {
+		crInt, _ := strconv.Atoi(mon.Challenge_Rating)
+		if crInt == cr {
+			candidates = append(candidates, mon)
+			fmt.Println(name)
+		}
+	}
 }
 
 func loadMonstersByEnvironment(env Environment) {

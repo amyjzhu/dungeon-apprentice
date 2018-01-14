@@ -6,15 +6,6 @@ import (
 )
 
 
-func getInt(s string) int {
-	integer, err := strconv.Atoi(s)
-	if err == nil {
-		fmt.Println("Talk to Amy... %s", err)
-	}
-
-	return integer
-}
-
 
 type Action struct {
 	name string
