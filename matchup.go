@@ -26,7 +26,7 @@ const (
 	easy Difficulty = iota
 	medium
 	hard
-	deadly
+deadly
 )
 
 type BaseStats struct {

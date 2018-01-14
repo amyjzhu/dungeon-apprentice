@@ -1,11 +1,11 @@
 package main
 
+import "path/filepath"
 
 func main() {
 
-
-
-	fmt.printf("%v\n", sampleMonsterJson)
+	absPath, _ := filepath.Abs("monsters.json")
+	loadStringFromFile(absPath)
 
 	// startServer()
 }

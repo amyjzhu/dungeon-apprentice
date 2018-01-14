@@ -18,7 +18,6 @@ func loadStringFromFile(pathToFile string) {
 
 	parseMonsters(dataString)
 	// should return stuff instead
-
 }
 
 func parseMonsters(jsonString string) {
@@ -28,4 +27,5 @@ func parseMonsters(jsonString string) {
 	if err != nil {
 		fmt.Printf("bad result, please tell Amy %s", err)
 	}
+	fmt.Printf("%v\n", monsters)
 }
