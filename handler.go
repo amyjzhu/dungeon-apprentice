@@ -37,7 +37,7 @@ func updateCharacter(w http.ResponseWriter, r *http.Request) {
 }
 
 func removeCharacter(w http.ResponseWriter, r *http.Request) {
-	r.Body.
+
 }
 
 func addNPCCharacter(w http.ResponseWriter, r *http.Request) {
