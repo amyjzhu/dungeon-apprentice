@@ -58,6 +58,10 @@ func createEncounter(numEnemiesDesired int, env Environment) {
 
 }
 
+func getMonsters(challengeRating int, env Environment) {
+	
+}
+
 func getChallengeRating(difficulty Difficulty, party []Character) int {
 	// TODO: implement a curve more like that prescribed in handbook table
 	// see http://slyflourish.com/5e_encounter_building.html

@@ -19,7 +19,6 @@ func loadCache() {
 
 	fmt.Printf("%v\n", monsterCache)
 
-
 }
 
 func loadMonstersByEnvironment(env Environment) {
