@@ -8,6 +8,7 @@ import "fmt"
 var monsterCache map[string]Monster
 
 func loadCache() {
+	monsterCache = make(map[string]Monster)
 	// retrieve from database or api maybe
 	monsters := loadAllMonstersFromFile()
 
