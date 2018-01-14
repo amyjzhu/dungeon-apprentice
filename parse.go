@@ -22,7 +22,7 @@ type Monster struct {
 	Wisdom int
 	Intelligence int
 	Dexterity int
-	Saves Saves
+	//Saves Saves
 	Damage_Vulnerabilities string
 	Damage_Immunities string
 // TODO: write a custom deserializer so that I can implement BaseStats
@@ -64,11 +64,11 @@ func loadStringFromFile(pathToFile string) {
 }
 
 func parseMonsters(jsonString string) {
-	sample := []byte(`[{ "name": "Aboleth", "size": "Large", "type": "aberration", "subtype": "", "alignment": "lawful evil", "armor_class": 17, "hit_points": 135, "hit_dice": "18d10", "speed": "10 ft., swim 40 ft.", "strength": 21, "dexterity": 9, "constitution": 15, "intelligence": 18, "wisdom": 15, "charisma": 18, "constitution_save": 6, "intelligence_save": 8, "wisdom_save": 6, "history": 12, "perception": 10, "damage_vulnerabilities": "sdfdfda", "damage_resistances": "sadfadf", "damage_immunities": "sdafsdf", "condition_immunities": "", "senses": "darkvision 120 ft., passive Perception 20", "languages": "Deep Speech, telepathy 120 ft.", "challenge_rating": "10" }]`)
+	//sample := []byte(`[{ "name": "Aboleth", "size": "Large", "type": "aberration", "subtype": "", "alignment": "lawful evil", "armor_class": 17, "hit_points": 135, "hit_dice": "18d10", "speed": "10 ft., swim 40 ft.", "strength": 21, "dexterity": 9, "constitution": 15, "intelligence": 18, "wisdom": 15, "charisma": 18, "constitution_save": 6, "intelligence_save": 8, "wisdom_save": 6, "history": 12, "perception": 10, "damage_vulnerabilities": "sdfdfda", "damage_resistances": "sadfadf", "damage_immunities": "sdafsdf", "condition_immunities": "", "senses": "darkvision 120 ft., passive Perception 20", "languages": "Deep Speech, telepathy 120 ft.", "challenge_rating": "10" }]`)
 	monsters := make([]Monster, 30) //  what is the amount
 
-	//err := json.Unmarshal([]byte(jsonString), &monsters)
-	err := json.Unmarshal(sample, &monsters)
+	err := json.Unmarshal([]byte(jsonString), &monsters)
+	//err := json.Unmarshal(sample,&monsters)
 
 	if err != nil {
 		fmt.Printf("bad result, please tell Amy %s", err)
