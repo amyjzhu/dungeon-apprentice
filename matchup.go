@@ -26,25 +26,25 @@ const (
 	easy Difficulty = iota
 	medium
 	hard
-deadly
+	deadly
 )
 
 type BaseStats struct {
-	strength int
-	charisma int
-	constitution int
-	wisdom int
-	intelligence int
-	dexterity int
+	Strength int
+	Charisma int
+	Constitution int
+	Wisdom int
+	Intelligence int
+	Dexterity int
 }
 
 type Saves struct { // statistics related to saving throws
-	strength_save int
-	charisma_save int
-	constitution_save int
-	wisdom_save int
-	intelligence_save int
-	dexterity_save int
+	Strength_Save int
+	Charisma_Save int
+	Constitution_Save int
+	Wisdom_Save int
+	Intelligence_Save int
+	Dexterity_Save int
 }
 
 type Character struct {
