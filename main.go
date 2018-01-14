@@ -1,7 +1,11 @@
 package main
 
-import "net/http"
 
 func main() {
-	startServer()
+
+
+
+	fmt.printf("%v\n", sampleMonsterJson)
+
+	// startServer()
 }

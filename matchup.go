@@ -21,9 +21,15 @@ const (
 	urban
 )
 
-type Character struct {
-	name string
-	level int
+type Difficulty int // encounter difficulty
+const (
+	easy Difficulty = iota
+	medium
+	hard
+	deadly
+)
+
+type BaseStats struct {
 	strength int
 	charisma int
 	constitution int
@@ -32,10 +38,27 @@ type Character struct {
 	dexterity int
 }
 
-type Monster struct {
-	cr int // challenge rating
+type Saves struct { // statistics related to saving throws
+	strength_save int
+	charisma_save int
+	constitution_save int
+	wisdom_save int
+	intelligence_save int
+	dexterity_save int
+}
+
+type Character struct {
+	name string
+	level int
+	stats BaseStats
+}
+
+func createEncounter(numEnemiesDesired int, env Environment) {
+	numEnemies = numEnemiesDesired
 
 }
+
+
 
 // TODO: later be able to specify round up or down
 func aggregateCharacterLevels(party []Character) int {
@@ -46,8 +69,4 @@ func aggregateCharacterLevels(party []Character) int {
 	}
 
 	return sum / len
-}
-
-func createEncounter(numEnemies int, ) {
-
 }
