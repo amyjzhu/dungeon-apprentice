@@ -25,7 +25,7 @@ func loadCache() {
 }
 
 // TODO: refactor to imporve extensibility
-func getMonsters(env Environment, cr int) {
+func getMonsters(env Environment, cr int) []Monster {
 	candidates := make([]Monster,10)
 	for name, mon := range monsterCache {
 		crInt, _ := strconv.Atoi(mon.Challenge_Rating)

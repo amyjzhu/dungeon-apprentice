@@ -55,13 +55,12 @@ type Character struct {
 	stats BaseStats
 }
 
-func createEncounter(numEnemiesDesired int, env Environment) {
+func createEncounter(numEnemiesDesired int, env Environment) []Monster {
 	numEnemies = numEnemiesDesired
 
 	challengeRating := getChallengeRating(difficulty, party)
-	getMonsters(env, challengeRating)
+	return getMonsters(env, challengeRating)
 	// create a number of monsters...
-
 }
 
 

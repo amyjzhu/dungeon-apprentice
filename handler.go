@@ -11,6 +11,14 @@ func hello(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Hello world!")
 }
 
+func getLineup(w http.ResponseWriter, r *http.Request) {
+	get
+}
+
+func getNextInLineup(w http.ResponseWriter, r *http.Request) {
+
+}
+
 func handleCharacter(w http.ResponseWriter, r *http.Request) {
 	var call HandlerFunction
 
