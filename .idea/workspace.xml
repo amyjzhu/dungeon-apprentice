@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9355d026-9765-4b0f-b40b-ccf1bdf3a647" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cache.go" afterPath="$PROJECT_DIR$/cache.go" />
-      <change beforePath="$PROJECT_DIR$/encounter.go" afterPath="$PROJECT_DIR$/encounter.go" />
-      <change beforePath="$PROJECT_DIR$/handler.go" afterPath="$PROJECT_DIR$/handler.go" />
-      <change beforePath="$PROJECT_DIR$/matchup.go" afterPath="$PROJECT_DIR$/matchup.go" />
+      <change beforePath="$PROJECT_DIR$/parse.go" afterPath="$PROJECT_DIR$/parse.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,11 +59,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="parse.go" pinned="false" current-in-tab="false">
+          <file leaf-file-name="parse.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/parse.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
-                  <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+                <state relative-caret-position="1254">
+                  <caret line="97" column="15" lean-forward="false" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="15" />
                   <folding>
                     <element signature="e#14#100#0" expanded="true" />
                   </folding>
@@ -85,7 +81,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cache.go" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cache.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cache.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="351">
@@ -159,12 +155,12 @@
         <option value="$PROJECT_DIR$/monsters.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/character.go" />
-        <option value="$PROJECT_DIR$/parse.go" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/handler.go" />
         <option value="$PROJECT_DIR$/encounter.go" />
         <option value="$PROJECT_DIR$/matchup.go" />
         <option value="$PROJECT_DIR$/cache.go" />
+        <option value="$PROJECT_DIR$/parse.go" />
       </list>
     </option>
   </component>
@@ -422,16 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parse.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#14#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/encounter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -452,6 +438,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cache.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="e#14#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/matchup.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -460,12 +456,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cache.go">
+    <entry file="file://$PROJECT_DIR$/parse.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        <state relative-caret-position="1254">
+          <caret line="97" column="15" lean-forward="false" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="15" />
           <folding>
-            <element signature="e#14#42#0" expanded="true" />
+            <element signature="e#14#100#0" expanded="true" />
           </folding>
         </state>
       </provider>

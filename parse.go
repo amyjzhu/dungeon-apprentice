@@ -93,3 +93,7 @@ func parseMonsters(jsonString string) []Monster {
 	}
 	return monsters
 }
+
+func (m *Monster) unmarshalJson(data []byte) error {
+	return nil;
+}
