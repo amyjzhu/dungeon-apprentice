@@ -12,7 +12,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func getLineup(w http.ResponseWriter, r *http.Request) {
-	get
+
 }
 
 func getNextInLineup(w http.ResponseWriter, r *http.Request) {

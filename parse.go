@@ -10,32 +10,6 @@ import (
 )
 
 
-type Monster struct {
-	Name string
-	Alignment string
-	Challenge_Rating string // challenge rating
-	env []Environment // places usually found
-	exp int // experience points award for defeat
-	Hit_Dice string // TODO: convert all these string values to hit dice thing
-	//Stats BaseStats
-	Strength int
-	Charisma int
-	Constitution int
-	Wisdom int
-	Intelligence int
-	Dexterity int
-	//Saves Saves
-	Damage_Vulnerabilities string
-	Damage_Immunities string
-// TODO: write a custom deserializer so that I can implement BaseStats
-}
-
-
-type DamageRoll struct {
-	rolls int
-	dice int
-}
-
 func (dr *DamageRoll) UnmarshalJSON(data []byte) error {
 	var roll string
 
@@ -46,8 +20,8 @@ func (dr *DamageRoll) UnmarshalJSON(data []byte) error {
 	}
 
 	parts := strings.Split(roll, "d")
-	dr.dice = getInt(parts[0])
-	dr.rolls = getInt(parts[1])
+	dr.die = getInt(parts[1])
+	dr.rolls = getInt(parts[0])
 	return nil
 }
 
@@ -61,7 +35,7 @@ func loadAllMonstersFromFile() []Monster {
 
 func getInt(s string) int {
 	integer, err := strconv.Atoi(s)
-	if err == nil {
+	if err != nil {
 		fmt.Println("Talk to Amy... %s", err)
 	}
 
@@ -83,7 +57,7 @@ func loadStringFromFile(pathToFile string) []Monster {
 
 func parseMonsters(jsonString string) []Monster {
 	//sample := []byte(`[{ "name": "Aboleth", "size": "Large", "type": "aberration", "subtype": "", "alignment": "lawful evil", "armor_class": 17, "hit_points": 135, "hit_dice": "18d10", "speed": "10 ft., swim 40 ft.", "strength": 21, "dexterity": 9, "constitution": 15, "intelligence": 18, "wisdom": 15, "charisma": 18, "constitution_save": 6, "intelligence_save": 8, "wisdom_save": 6, "history": 12, "perception": 10, "damage_vulnerabilities": "sdfdfda", "damage_resistances": "sadfadf", "damage_immunities": "sdafsdf", "condition_immunities": "", "senses": "darkvision 120 ft., passive Perception 20", "languages": "Deep Speech, telepathy 120 ft.", "challenge_rating": "10" }]`)
-	monsters := make([]Monster, 30) //  what is the amount
+	monsters := make([]Monster, 30) //  what is the number of mosnters? have to go through and find out
 
 	err := json.Unmarshal([]byte(jsonString), &monsters)
 	//err := json.Unmarshal(sample,&monsters)

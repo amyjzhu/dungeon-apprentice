@@ -1,9 +1,8 @@
 package main
 
 import (
-	"math/rand"
 )
-
+/*
 func findInitialLineup(party []Character, numMonsters int, env Environment) {
 	monsters := createEncounter(party, env);
 }
@@ -15,3 +14,4 @@ func randomizeOrder(party []Character, monsters []Monster) {
 		allCreatures[i], allCreatures[j] = allCreatures[j], allCreatures[i]
 	}
 }
+*/

@@ -34,6 +34,8 @@ func getMonsters(env Environment, cr int) []Monster {
 			fmt.Println(name)
 		}
 	}
+
+	return candidates
 }
 
 func loadMonstersByEnvironment(env Environment) {
