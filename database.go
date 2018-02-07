@@ -25,16 +25,32 @@ func insertStat(db *sql.DB) {
 	statsNames := [6]string{"charisma", "strength", "constitution", "intelligence", "wisdom", "dexterity"}
 	stats := make(map[string]int)
 
+	fmt.Println(statsNames)
 	stmt, err := db.Prepare("insert into stats `stat` values ?")
-	defer stmt.Close();
-	for i := 0; i < 6; i++ {
-		stmt.Exec(statsNames[i]);
-		if (err != nil) {
-			log.Fatal(err)
-		}
-		stats[statsNames[i]] = i
-	}
 
+	if (err != nil) {
+
+		defer stmt.Close();
+		for i := 0; i < 6; i++ {
+			stmt.Exec(statsNames[i])
+			if (err != nil) {
+				log.Fatal(err)
+				break
+			}
+
+			stats[statsNames[i]] = i
+		}
+	} else {
+		fmt.Print("did nothing")
+	}
+}
+
+func openConnection() *sql.DB {
+	db, err := sql.Open("mysql", "amy:zhu@tcp(127.0.0.1:3306/monster")
+	if err != nil {
+		fmt.Print(err)
+	}
+	return db
 }
 
 /*

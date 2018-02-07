@@ -1,10 +1,13 @@
 package main
 
-
 func main() {
-	loadCache()
 
-	getMonsters(1,10)
+	db := openConnection()
+	insertStat(db)
+
+//	loadCache()
+
+//	getMonsters(1,10)
 
 	// startServer()
 }
