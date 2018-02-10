@@ -56,11 +56,9 @@ func loadStringFromFile(pathToFile string) []Monster {
 }
 
 func parseMonsters(jsonString string) []Monster {
-	//sample := []byte(`[{ "name": "Aboleth", "size": "Large", "type": "aberration", "subtype": "", "alignment": "lawful evil", "armor_class": 17, "hit_points": 135, "hit_dice": "18d10", "speed": "10 ft., swim 40 ft.", "strength": 21, "dexterity": 9, "constitution": 15, "intelligence": 18, "wisdom": 15, "charisma": 18, "constitution_save": 6, "intelligence_save": 8, "wisdom_save": 6, "history": 12, "perception": 10, "damage_vulnerabilities": "sdfdfda", "damage_resistances": "sadfadf", "damage_immunities": "sdafsdf", "condition_immunities": "", "senses": "darkvision 120 ft., passive Perception 20", "languages": "Deep Speech, telepathy 120 ft.", "challenge_rating": "10" }]`)
 	monsters := make([]Monster, 30) //  what is the number of mosnters? have to go through and find out
 
 	err := json.Unmarshal([]byte(jsonString), &monsters)
-	//err := json.Unmarshal(sample,&monsters)
 
 	if err != nil {
 		fmt.Printf("bad result, please tell Amy %s", err)
