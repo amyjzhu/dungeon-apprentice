@@ -30,11 +30,11 @@ func getChallengeRating(difficulty Difficulty, party []Character) int {
 
 // TODO: later be able to specify round up or down
 func aggregateCharacterLevels(party []Character) int {
-	len := len(party)
+	length := len(party)
 	sum := 0
-	for i := 0; i < len; i++ {
+	for i := 0; i < length; i++ {
 		sum += party[i].level
 	}
 
-	return sum / len
+	return sum / length
 }

@@ -92,3 +92,31 @@ func getIdForValue(db string, value string) {
 	stmt, err := db.Prepare("select id from ? where name=") // change db for consistency
 }
 */
+
+func retrieveMonstersByEnvironmentFromDatabase(env Environment) []Monster {
+	return _retrieveMonstersByEnvironmentFromDatabase(env, openConnection())
+}
+
+func _retrieveMonstersByEnvironmentFromDatabase(env Environment, db *sql.DB) []Monster {
+	query := "SELECT * FROM monsters WHERE environment LIKE ?"
+	stmt, err := db.Prepare(query)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer stmt.Close()
+	rows, err := stmt.Query(env)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer rows.Close()
+
+	//monsters := make([]Monster, 20)
+	for rows.Next() {
+	//	append(monsters, nil) // wait, I don't know how to get the element
+	}
+
+}

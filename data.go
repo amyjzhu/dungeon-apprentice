@@ -71,6 +71,12 @@ const (
 	urban
 )
 
+var Environments = []Environment {
+	arctic, coastal, desert, forest, grassland,
+	hill, mountain, swamp, underdark, underwater, urban
+
+}
+
 type Difficulty int // encounter difficulty
 const (
 	easy Difficulty = iota

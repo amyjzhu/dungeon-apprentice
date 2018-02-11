@@ -9,11 +9,16 @@ import (
 // cache things in CR order?
 
 var monsterCache map[string]Monster
+var environmentCache map[Environment][]Monster
+
+func initialize() {
+	loadCache()
+	loadEnvironmentCache()
+}
 
 func loadCache() {
 	monsterCache = make(map[string]Monster)
-	// retrieve from database or api maybe
-	monsters := loadAllMonstersFromFile()
+	monsters := loadAllMonstersFromFile() // TODO load from database instead
 
 	for i := 0; i < len(monsters); i++ {
 		monster := monsters[i]
@@ -22,6 +27,14 @@ func loadCache() {
 
 	fmt.Printf("%v\n", monsterCache)
 
+}
+
+func loadEnvironmentCache() {
+	environmentCache = make(map[Environment][]Monster)
+	for _, env := range Environments {
+		monsters := retrieveMonstersByEnvironmentFromDatabase(env);
+		environmentCache[env] = monsters
+	}
 }
 
 // TODO: refactor to imporve extensibility
@@ -38,12 +51,10 @@ func getMonsters(env Environment, cr int) []Monster {
 	return candidates
 }
 
-func loadMonstersByEnvironment(env Environment) {
-
-}
-
-func getMonstersForEnvironment(env Environment) {
+func getMonstersForEnvironment(env Environment) []Monster {
 	// make sure the environment ID is related to the database's
 	// TODO: programmatically enforce ID relation
 	// want to index it different ways anyway, like order by CR
+
+	return environmentCache[env]
 }

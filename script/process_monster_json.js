@@ -3,7 +3,7 @@ const fs = require("fs");
 // usage:
 // I can't be assed to make this user-friendly since it's just a script for me
 // put the desired original file as monsters.json or whatever
-// run node main.js 
+// run node main.js
 // get new data from new_monsters.json
 
 var baseStats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
