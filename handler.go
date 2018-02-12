@@ -3,6 +3,7 @@ package main
 import (
 	"io"
 	"net/http"
+	"encoding/json"
 )
 
 type HandlerFunction func(w http.ResponseWriter, r *http.Request)
@@ -11,8 +12,23 @@ func hello(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Hello world!")
 }
 
-func getLineup(w http.ResponseWriter, r *http.Request) {
+func getEncounter(w http.ResponseWriter, r *http.Request) {
+	var request Encounter
+	json.Unmarshal(extractBody(w, r), &request)
 
+	createEncounter(request)
+
+	io.WriteString(w, request.getString())
+}
+
+func extractBody(w http.ResponseWriter, r *http.Request) []byte {
+	var body []byte
+	res, err := r.Body.Read(body)
+	if (err != nil) {
+		io.WriteString(w, "Bad request")
+	}
+
+	return body
 }
 
 func getNextInLineup(w http.ResponseWriter, r *http.Request) {

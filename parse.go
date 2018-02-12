@@ -13,7 +13,7 @@ import (
 func (dr *DamageRoll) UnmarshalJSON(data []byte) error {
 	var roll string
 
-	err := json.Unmarshal(data, &roll);
+	err := json.Unmarshal(data , &roll);
 	if err != nil {
 		fmt.Println("issue")
 		return err

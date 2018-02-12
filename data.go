@@ -3,6 +3,7 @@ package main
 import (
 	"strconv"
 	"log"
+	"encoding/json"
 )
 
 // TODO these probably don't have to be exportabl
@@ -14,6 +15,15 @@ type Encounter struct {
 	NumMonsters int
 	Difficulty Difficulty
 	Condition []Condition
+}
+
+func (encounter *Encounter) getString() string {
+	b, err := json.Marshal(encounter)
+	if err != nil {
+		log.Fatal("Couldn't serialize encounter!")
+	}
+
+	return string(b[:])
 }
 
 type Condition struct {
