@@ -1,5 +1,10 @@
 package main
 
+import (
+	"strconv"
+	"log"
+)
+
 // TODO these probably don't have to be exportabl
 type Encounter struct {
 	Player []Character
@@ -14,6 +19,19 @@ type Encounter struct {
 type Condition struct {
 
 }
+
+// TODO abstract implementing function pointers? too annoying?
+func greaterThanEqualChallengeRating(cr string, otherCr string) bool {
+	crInt, err := strconv.Atoi(cr);
+	otherCrInt, err := strconv.Atoi(otherCr)
+
+	if err != nil {
+		log.Fatal("challenge ratings are non-numeric")
+	}
+
+	return crInt >= otherCrInt
+}
+
 
 type Monster struct {
 	Name string
