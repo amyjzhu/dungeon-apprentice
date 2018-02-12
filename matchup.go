@@ -23,7 +23,7 @@ func getChallengeRating(party []Character, numEnemies int) int {
 
 	numberRatio := len(party) / numEnemies
 
-	challengeRating := aggregateCharacterLevels(party) * numberRatio // TODO convert to string lol
+	challengeRating := aggregateCharacterLevels(party) * numberRatio
 
 	return challengeRating
 
