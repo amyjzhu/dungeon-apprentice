@@ -32,7 +32,7 @@ func loadCache() {
 func loadEnvironmentCache() {
 	environmentCache = make(map[Environment][]Monster)
 	for _, env := range Environments {
-		monsters := retrieveMonstersByEnvironmentFromDatabase(env);
+		monsters := databaseSelectMonstersByEnvironment(env);
 		environmentCache[env] = monsters
 	}
 }

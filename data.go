@@ -1,12 +1,27 @@
 package main
 
+// TODO these probably don't have to be exportabl
+type Encounter struct {
+	Player []Character
+	Npc []Character
+	Enemy []Monster
+	Env Environment
+	NumMonsters int
+	Difficulty Difficulty
+	Condition []Condition
+}
+
+type Condition struct {
+
+}
+
 type Monster struct {
 	Name string
 	Alignment string
 	Challenge_Rating string // challenge rating
 	env []Environment // places usually found
 	exp int // experience points award for defeat
-	Hit_Dice DamageRoll // TODO: convert all these string values to hit dice thing
+	Hit_Dice DamageRoll
 	Base_Stats BaseStats
 	Skills Skills
 	//Saves Saves
@@ -15,7 +30,6 @@ type Monster struct {
 	Special_Abilities []Action
 	Legendary_Actions []Action
 	Actions[] Action
-	// TODO: write a custom deserializer so that I can implement BaseStats
 }
 
 type Action struct {
@@ -73,9 +87,7 @@ const (
 
 var Environments = []Environment {
 	arctic, coastal, desert, forest, grassland,
-	hill, mountain, swamp, underdark, underwater, urban
-
-}
+	hill, mountain, swamp, underdark, underwater, urban}
 
 type Difficulty int // encounter difficulty
 const (

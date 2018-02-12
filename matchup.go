@@ -1,26 +1,21 @@
 package main
 
-var numChars int
-var numEnemies int
-var difficulty Difficulty
-var party []Character
+var MAX_ENEMY_TYPES = 5 // TODO fix this arbitrary limit
 
-// TODO: move environment enum to better location
+func createEncounter(request Encounter) []Monster {
+	challengeRating := getChallengeRating(request.Player, request.NumMonsters)
+	monsters := getMonstersForEnvironment(request.Env)
 
 
-func createEncounter(numEnemiesDesired int, env Environment) []Monster {
-	numEnemies = numEnemiesDesired
-
-	challengeRating := getChallengeRating(difficulty, party)
-	return getMonsters(env, challengeRating)
+	return getMonsters(request.Env, challengeRating)
 	// create a number of monsters...
 }
 
-func getChallengeRating(difficulty Difficulty, party []Character) int {
+func getChallengeRating(party []Character, numEnemies int) int {
 	// TODO: implement a curve more like that prescribed in handbook table
 	// see http://slyflourish.com/5e_encounter_building.html
 
-	numberRatio := numChars / numEnemies
+	numberRatio := len(party) / numEnemies
 
 	challengeRating := aggregateCharacterLevels(party) * numberRatio
 
@@ -37,4 +32,13 @@ func aggregateCharacterLevels(party []Character) int {
 	}
 
 	return sum / length
+}
+
+func filterByChallengeRating(candidates []Monster, cr int) {
+	crMatches := make([]Monster, MAX_ENEMY_TYPES)
+	for _, monster := range candidates {
+		if monster.Challenge_Rating >= cr {
+			crMatches = append(crMatches, monster)
+		}
+	}
 }

@@ -93,12 +93,12 @@ func getIdForValue(db string, value string) {
 }
 */
 
-func retrieveMonstersByEnvironmentFromDatabase(env Environment) []Monster {
-	return _retrieveMonstersByEnvironmentFromDatabase(env, openConnection())
+func databaseSelectMonstersByEnvironment(env Environment) []Monster {
+	return _databaseSelectMonstersByEnvironment(env, openConnection())
 }
 
-func _retrieveMonstersByEnvironmentFromDatabase(env Environment, db *sql.DB) []Monster {
-	query := "SELECT * FROM monsters WHERE environment LIKE ?"
+func _databaseSelectMonstersByEnvironment(env Environment, db *sql.DB) []Monster {
+	query := "SELECT * FROM monsters WHERE environment LIKE ? ORDER BY challenge_rating"
 	stmt, err := db.Prepare(query)
 
 	if err != nil {

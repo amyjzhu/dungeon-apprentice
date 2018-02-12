@@ -2,6 +2,13 @@ package main
 
 import (
 )
+
+func createEncounterRequest(party []Character, env Environment, difficulty Difficulty, numEnemies int) {
+	request := &Encounter{party, nil, nil, env, numEnemies, difficulty, nil};
+	createEncounter(request)
+}
+
+
 /*
 func findInitialLineup(party []Character, numMonsters int, env Environment) {
 	monsters := createEncounter(party, env);
