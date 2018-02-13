@@ -1,11 +1,14 @@
 package main
 
+import "fmt"
+
 func main() {
 
-	db := openConnection()
-	insertStat(db)
+	//db := openConnection()
+	//insertStat(db)
 
-//	loadCache()
+	loadCache()
+	fmt.Println(environmentCache)
 
 //	getMonsters(1,10)
 

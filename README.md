@@ -12,3 +12,4 @@ Idea: make it easier to generate D&D encounters based on party level, difficulty
 - :chestnut: user interface with Angular2
 - :seedling: generate insert script for constants
 - :seedling: mockdatabase for now and test matchup
+- :chestnut: fix damage dice implementation to account for + 

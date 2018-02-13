@@ -23,7 +23,7 @@ func getEncounter(w http.ResponseWriter, r *http.Request) {
 
 func extractBody(w http.ResponseWriter, r *http.Request) []byte {
 	var body []byte
-	res, err := r.Body.Read(body)
+	_, err := r.Body.Read(body)
 	if (err != nil) {
 		io.WriteString(w, "Bad request")
 	}
@@ -76,6 +76,7 @@ func retrieveCharacter(w http.ResponseWriter, r *http.Request) {
 func startServer() {
 	http.HandleFunc("/", hello)
 	http.HandleFunc("/character", handleCharacter)
+	http.HandleFunc("/encounter", getEncounter)
 
 	http.ListenAndServe(":4545", nil)
 }

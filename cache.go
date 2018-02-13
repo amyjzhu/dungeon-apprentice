@@ -29,12 +29,39 @@ func loadCache() {
 
 }
 
-func loadEnvironmentCache() {
+func _loadEnvironmentCacheDb() {
 	environmentCache = make(map[Environment][]Monster)
 	for _, env := range Environments {
 		monsters := databaseSelectMonstersByEnvironment(env);
 		environmentCache[env] = monsters
 	}
+}
+
+func loadEnvironmentCache() {
+	environmentCache = make(map[Environment][]Monster)
+	for _, env := range Environments {
+		monsters := cacheGetMonsterByEnvironment(env);
+		environmentCache[env] = monsters
+	}
+}
+
+// yes, this is quadratic...
+func cacheGetMonsterByEnvironment(env Environment) []Monster {
+	monsters := make([]Monster, 30)
+	for _, monster := range monsterCache {
+		inEnv := false
+		for _, mEnv := range monster.env {
+			if mEnv == env {
+				inEnv = true
+			}
+		}
+
+		if inEnv {
+			monsters = append(monsters, monster)
+		}
+	}
+
+	return monsters
 }
 
 // TODO: refactor to imporve extensibility

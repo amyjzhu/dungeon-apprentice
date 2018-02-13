@@ -119,4 +119,5 @@ func _databaseSelectMonstersByEnvironment(env Environment, db *sql.DB) []Monster
 	//	append(monsters, nil) // wait, I don't know how to get the element
 	}
 
+	return nil
 }

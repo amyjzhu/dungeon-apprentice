@@ -5,7 +5,7 @@ import (
 
 func createEncounterRequest(party []Character, env Environment, difficulty Difficulty, numEnemies int) {
 	request := &Encounter{party, nil, nil, env, numEnemies, difficulty, nil};
-	createEncounter(request)
+	createEncounter(*request)
 }
 
 
